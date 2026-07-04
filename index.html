@@ -1,0 +1,1427 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Studio BI - Production Multi-Slicer Suite</title>
+    
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script><style>/*! tailwindcss v4.3.2 | MIT License | https://tailwindcss.com */
+@layer properties;
+@layer theme, base, components, utilities;
+@layer theme {
+  :root, :host {
+    --font-sans: ui-sans-serif, system-ui, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol',
+    'Noto Color Emoji';
+    --font-mono: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, 'Liberation Mono', 'Courier New',
+    monospace;
+    --color-red-500: oklch(63.7% 0.237 25.331);
+    --color-red-600: oklch(57.7% 0.245 27.325);
+    --color-orange-500: oklch(70.5% 0.213 47.604);
+    --color-orange-600: oklch(64.6% 0.222 41.116);
+    --color-amber-600: oklch(66.6% 0.179 58.318);
+    --color-emerald-600: oklch(59.6% 0.145 163.225);
+    --color-indigo-500: oklch(58.5% 0.233 277.117);
+    --color-indigo-600: oklch(51.1% 0.262 276.966);
+    --color-indigo-700: oklch(45.7% 0.24 277.023);
+    --color-purple-600: oklch(55.8% 0.288 302.321);
+    --color-slate-50: oklch(98.4% 0.003 247.858);
+    --color-slate-100: oklch(96.8% 0.007 247.896);
+    --color-slate-200: oklch(92.9% 0.013 255.508);
+    --color-slate-300: oklch(86.9% 0.022 252.894);
+    --color-slate-400: oklch(70.4% 0.04 256.788);
+    --color-slate-600: oklch(44.6% 0.043 257.281);
+    --color-slate-700: oklch(37.2% 0.044 257.287);
+    --color-slate-800: oklch(27.9% 0.041 260.031);
+    --color-slate-900: oklch(20.8% 0.042 265.755);
+    --color-black: #000;
+    --color-white: #fff;
+    --spacing: 0.25rem;
+    --container-sm: 24rem;
+    --container-7xl: 80rem;
+    --text-xs: 0.75rem;
+    --text-xs--line-height: calc(1 / 0.75);
+    --text-sm: 0.875rem;
+    --text-sm--line-height: calc(1.25 / 0.875);
+    --text-lg: 1.125rem;
+    --text-lg--line-height: calc(1.75 / 1.125);
+    --text-2xl: 1.5rem;
+    --text-2xl--line-height: calc(2 / 1.5);
+    --font-weight-bold: 700;
+    --font-weight-black: 900;
+    --tracking-tight: -0.025em;
+    --tracking-wide: 0.025em;
+    --tracking-wider: 0.05em;
+    --radius-md: 0.375rem;
+    --radius-lg: 0.5rem;
+    --radius-xl: 0.75rem;
+    --radius-2xl: 1rem;
+    --default-transition-duration: 150ms;
+    --default-transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+    --default-font-family: var(--font-sans);
+    --default-mono-font-family: var(--font-mono);
+  }
+}
+@layer base {
+  *, ::after, ::before, ::backdrop, ::file-selector-button {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    border: 0 solid;
+  }
+  html, :host {
+    line-height: 1.5;
+    -webkit-text-size-adjust: 100%;
+    tab-size: 4;
+    font-family: var(--default-font-family, ui-sans-serif, system-ui, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji');
+    font-feature-settings: var(--default-font-feature-settings, normal);
+    font-variation-settings: var(--default-font-variation-settings, normal);
+    -webkit-tap-highlight-color: transparent;
+  }
+  hr {
+    height: 0;
+    color: inherit;
+    border-top-width: 1px;
+  }
+  abbr:where([title]) {
+    -webkit-text-decoration: underline dotted;
+    text-decoration: underline dotted;
+  }
+  h1, h2, h3, h4, h5, h6 {
+    font-size: inherit;
+    font-weight: inherit;
+  }
+  a {
+    color: inherit;
+    -webkit-text-decoration: inherit;
+    text-decoration: inherit;
+  }
+  b, strong {
+    font-weight: bolder;
+  }
+  code, kbd, samp, pre {
+    font-family: var(--default-mono-font-family, ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, 'Liberation Mono', 'Courier New', monospace);
+    font-feature-settings: var(--default-mono-font-feature-settings, normal);
+    font-variation-settings: var(--default-mono-font-variation-settings, normal);
+    font-size: 1em;
+  }
+  small {
+    font-size: 80%;
+  }
+  sub, sup {
+    font-size: 75%;
+    line-height: 0;
+    position: relative;
+    vertical-align: baseline;
+  }
+  sub {
+    bottom: -0.25em;
+  }
+  sup {
+    top: -0.5em;
+  }
+  table {
+    text-indent: 0;
+    border-color: inherit;
+    border-collapse: collapse;
+  }
+  :-moz-focusring {
+    outline: auto;
+  }
+  progress {
+    vertical-align: baseline;
+  }
+  summary {
+    display: list-item;
+  }
+  ol, ul, menu {
+    list-style: none;
+  }
+  img, svg, video, canvas, audio, iframe, embed, object {
+    display: block;
+    vertical-align: middle;
+  }
+  img, video {
+    max-width: 100%;
+    height: auto;
+  }
+  button, input, select, optgroup, textarea, ::file-selector-button {
+    font: inherit;
+    font-feature-settings: inherit;
+    font-variation-settings: inherit;
+    letter-spacing: inherit;
+    color: inherit;
+    border-radius: 0;
+    background-color: transparent;
+    opacity: 1;
+  }
+  :where(select:is([multiple], [size])) optgroup {
+    font-weight: bolder;
+  }
+  :where(select:is([multiple], [size])) optgroup option {
+    padding-inline-start: 20px;
+  }
+  ::file-selector-button {
+    margin-inline-end: 4px;
+  }
+  ::placeholder {
+    opacity: 1;
+  }
+  @supports (not (-webkit-appearance: -apple-pay-button))  or (contain-intrinsic-size: 1px) {
+    ::placeholder {
+      color: currentcolor;
+      @supports (color: color-mix(in lab, red, red)) {
+        color: color-mix(in oklab, currentcolor 50%, transparent);
+      }
+    }
+  }
+  textarea {
+    resize: vertical;
+  }
+  ::-webkit-search-decoration {
+    -webkit-appearance: none;
+  }
+  ::-webkit-date-and-time-value {
+    min-height: 1lh;
+    text-align: inherit;
+  }
+  ::-webkit-datetime-edit {
+    display: inline-flex;
+  }
+  ::-webkit-datetime-edit-fields-wrapper {
+    padding: 0;
+  }
+  ::-webkit-datetime-edit, ::-webkit-datetime-edit-year-field, ::-webkit-datetime-edit-month-field, ::-webkit-datetime-edit-day-field, ::-webkit-datetime-edit-hour-field, ::-webkit-datetime-edit-minute-field, ::-webkit-datetime-edit-second-field, ::-webkit-datetime-edit-millisecond-field, ::-webkit-datetime-edit-meridiem-field {
+    padding-block: 0;
+  }
+  ::-webkit-calendar-picker-indicator {
+    line-height: 1;
+  }
+  :-moz-ui-invalid {
+    box-shadow: none;
+  }
+  button, input:where([type='button'], [type='reset'], [type='submit']), ::file-selector-button {
+    appearance: button;
+  }
+  ::-webkit-inner-spin-button, ::-webkit-outer-spin-button {
+    height: auto;
+  }
+  [hidden]:where(:not([hidden='until-found'])) {
+    display: none !important;
+  }
+}
+@layer utilities {
+  .pointer-events-none {
+    pointer-events: none;
+  }
+  .absolute {
+    position: absolute;
+  }
+  .fixed {
+    position: fixed;
+  }
+  .relative {
+    position: relative;
+  }
+  .sticky {
+    position: sticky;
+  }
+  .inset-0 {
+    inset: 0;
+  }
+  .top-0 {
+    top: 0;
+  }
+  .z-10 {
+    z-index: 10;
+  }
+  .z-20 {
+    z-index: 20;
+  }
+  .z-50 {
+    z-index: 50;
+  }
+  .mx-auto {
+    margin-inline: auto;
+  }
+  .mt-1 {
+    margin-top: var(--spacing);
+  }
+  .mt-2 {
+    margin-top: calc(var(--spacing) * 2);
+  }
+  .mb-1 {
+    margin-bottom: var(--spacing);
+  }
+  .mb-2 {
+    margin-bottom: calc(var(--spacing) * 2);
+  }
+  .mb-4 {
+    margin-bottom: calc(var(--spacing) * 4);
+  }
+  .mb-6 {
+    margin-bottom: calc(var(--spacing) * 6);
+  }
+  .block {
+    display: block;
+  }
+  .flex {
+    display: flex;
+  }
+  .grid {
+    display: grid;
+  }
+  .hidden {
+    display: none;
+  }
+  .h-\[650px\] {
+    height: 650px;
+  }
+  .h-full {
+    height: 100%;
+  }
+  .max-h-\[160px\] {
+    max-height: 160px;
+  }
+  .max-h-\[500px\] {
+    max-height: 500px;
+  }
+  .min-h-\[240px\] {
+    min-height: 240px;
+  }
+  .min-h-\[320px\] {
+    min-height: 320px;
+  }
+  .w-full {
+    width: 100%;
+  }
+  .max-w-7xl {
+    max-width: var(--container-7xl);
+  }
+  .max-w-sm {
+    max-width: var(--container-sm);
+  }
+  .flex-1 {
+    flex: 1;
+  }
+  .border-collapse {
+    border-collapse: collapse;
+  }
+  .cursor-pointer {
+    cursor: pointer;
+  }
+  .grid-cols-1 {
+    grid-template-columns: repeat(1, minmax(0, 1fr));
+  }
+  .grid-cols-2 {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+  .flex-col {
+    flex-direction: column;
+  }
+  .flex-wrap {
+    flex-wrap: wrap;
+  }
+  .items-center {
+    align-items: center;
+  }
+  .items-start {
+    align-items: flex-start;
+  }
+  .justify-between {
+    justify-content: space-between;
+  }
+  .justify-center {
+    justify-content: center;
+  }
+  .gap-1\.5 {
+    gap: calc(var(--spacing) * 1.5);
+  }
+  .gap-2 {
+    gap: calc(var(--spacing) * 2);
+  }
+  .gap-4 {
+    gap: calc(var(--spacing) * 4);
+  }
+  .gap-6 {
+    gap: calc(var(--spacing) * 6);
+  }
+  .space-y-4 {
+    :where(& > :not(:last-child)) {
+      --tw-space-y-reverse: 0;
+      margin-block-start: calc(calc(var(--spacing) * 4) * var(--tw-space-y-reverse));
+      margin-block-end: calc(calc(var(--spacing) * 4) * calc(1 - var(--tw-space-y-reverse)));
+    }
+  }
+  .space-y-6 {
+    :where(& > :not(:last-child)) {
+      --tw-space-y-reverse: 0;
+      margin-block-start: calc(calc(var(--spacing) * 6) * var(--tw-space-y-reverse));
+      margin-block-end: calc(calc(var(--spacing) * 6) * calc(1 - var(--tw-space-y-reverse)));
+    }
+  }
+  .divide-y {
+    :where(& > :not(:last-child)) {
+      --tw-divide-y-reverse: 0;
+      border-bottom-style: var(--tw-border-style);
+      border-top-style: var(--tw-border-style);
+      border-top-width: calc(1px * var(--tw-divide-y-reverse));
+      border-bottom-width: calc(1px * calc(1 - var(--tw-divide-y-reverse)));
+    }
+  }
+  .divide-slate-200 {
+    :where(& > :not(:last-child)) {
+      border-color: var(--color-slate-200);
+    }
+  }
+  .overflow-x-auto {
+    overflow-x: auto;
+  }
+  .overflow-y-auto {
+    overflow-y: auto;
+  }
+  .rounded-2xl {
+    border-radius: var(--radius-2xl);
+  }
+  .rounded-lg {
+    border-radius: var(--radius-lg);
+  }
+  .rounded-md {
+    border-radius: var(--radius-md);
+  }
+  .rounded-xl {
+    border-radius: var(--radius-xl);
+  }
+  .border {
+    border-style: var(--tw-border-style);
+    border-width: 1px;
+  }
+  .border-2 {
+    border-style: var(--tw-border-style);
+    border-width: 2px;
+  }
+  .border-b {
+    border-bottom-style: var(--tw-border-style);
+    border-bottom-width: 1px;
+  }
+  .border-dashed {
+    --tw-border-style: dashed;
+    border-style: dashed;
+  }
+  .border-slate-100 {
+    border-color: var(--color-slate-100);
+  }
+  .border-slate-200 {
+    border-color: var(--color-slate-200);
+  }
+  .border-slate-300 {
+    border-color: var(--color-slate-300);
+  }
+  .bg-black {
+    background-color: var(--color-black);
+  }
+  .bg-black\/60 {
+    background-color: color-mix(in srgb, #000 60%, transparent);
+    @supports (color: color-mix(in lab, red, red)) {
+      background-color: color-mix(in oklab, var(--color-black) 60%, transparent);
+    }
+  }
+  .bg-indigo-600 {
+    background-color: var(--color-indigo-600);
+  }
+  .bg-orange-500 {
+    background-color: var(--color-orange-500);
+  }
+  .bg-red-500 {
+    background-color: var(--color-red-500);
+  }
+  .bg-slate-50 {
+    background-color: var(--color-slate-50);
+  }
+  .bg-slate-100 {
+    background-color: var(--color-slate-100);
+  }
+  .bg-slate-200 {
+    background-color: var(--color-slate-200);
+  }
+  .bg-white {
+    background-color: var(--color-white);
+  }
+  .p-2 {
+    padding: calc(var(--spacing) * 2);
+  }
+  .p-3 {
+    padding: calc(var(--spacing) * 3);
+  }
+  .p-4 {
+    padding: calc(var(--spacing) * 4);
+  }
+  .p-6 {
+    padding: calc(var(--spacing) * 6);
+  }
+  .px-4 {
+    padding-inline: calc(var(--spacing) * 4);
+  }
+  .py-2 {
+    padding-block: calc(var(--spacing) * 2);
+  }
+  .py-2\.5 {
+    padding-block: calc(var(--spacing) * 2.5);
+  }
+  .pt-12 {
+    padding-top: calc(var(--spacing) * 12);
+  }
+  .pr-1 {
+    padding-right: var(--spacing);
+  }
+  .pb-1 {
+    padding-bottom: var(--spacing);
+  }
+  .pb-1\.5 {
+    padding-bottom: calc(var(--spacing) * 1.5);
+  }
+  .pb-4 {
+    padding-bottom: calc(var(--spacing) * 4);
+  }
+  .text-center {
+    text-align: center;
+  }
+  .text-left {
+    text-align: left;
+  }
+  .text-2xl {
+    font-size: var(--text-2xl);
+    line-height: var(--tw-leading, var(--text-2xl--line-height));
+  }
+  .text-lg {
+    font-size: var(--text-lg);
+    line-height: var(--tw-leading, var(--text-lg--line-height));
+  }
+  .text-sm {
+    font-size: var(--text-sm);
+    line-height: var(--tw-leading, var(--text-sm--line-height));
+  }
+  .text-xs {
+    font-size: var(--text-xs);
+    line-height: var(--tw-leading, var(--text-xs--line-height));
+  }
+  .text-\[9px\] {
+    font-size: 9px;
+  }
+  .text-\[10px\] {
+    font-size: 10px;
+  }
+  .text-\[11px\] {
+    font-size: 11px;
+  }
+  .font-black {
+    --tw-font-weight: var(--font-weight-black);
+    font-weight: var(--font-weight-black);
+  }
+  .font-bold {
+    --tw-font-weight: var(--font-weight-bold);
+    font-weight: var(--font-weight-bold);
+  }
+  .tracking-tight {
+    --tw-tracking: var(--tracking-tight);
+    letter-spacing: var(--tracking-tight);
+  }
+  .tracking-wide {
+    --tw-tracking: var(--tracking-wide);
+    letter-spacing: var(--tracking-wide);
+  }
+  .tracking-wider {
+    --tw-tracking: var(--tracking-wider);
+    letter-spacing: var(--tracking-wider);
+  }
+  .text-amber-600 {
+    color: var(--color-amber-600);
+  }
+  .text-black {
+    color: var(--color-black);
+  }
+  .text-emerald-600 {
+    color: var(--color-emerald-600);
+  }
+  .text-indigo-500 {
+    color: var(--color-indigo-500);
+  }
+  .text-indigo-600 {
+    color: var(--color-indigo-600);
+  }
+  .text-purple-600 {
+    color: var(--color-purple-600);
+  }
+  .text-red-500 {
+    color: var(--color-red-500);
+  }
+  .text-slate-300 {
+    color: var(--color-slate-300);
+  }
+  .text-slate-400 {
+    color: var(--color-slate-400);
+  }
+  .text-slate-600 {
+    color: var(--color-slate-600);
+  }
+  .text-slate-700 {
+    color: var(--color-slate-700);
+  }
+  .text-slate-800 {
+    color: var(--color-slate-800);
+  }
+  .text-slate-900 {
+    color: var(--color-slate-900);
+  }
+  .text-white {
+    color: var(--color-white);
+  }
+  .uppercase {
+    text-transform: uppercase;
+  }
+  .italic {
+    font-style: italic;
+  }
+  .opacity-40 {
+    opacity: 40%;
+  }
+  .shadow-sm {
+    --tw-shadow: 0 1px 3px 0 var(--tw-shadow-color, rgb(0 0 0 / 0.1)), 0 1px 2px -1px var(--tw-shadow-color, rgb(0 0 0 / 0.1));
+    box-shadow: var(--tw-inset-shadow), var(--tw-inset-ring-shadow), var(--tw-ring-offset-shadow), var(--tw-ring-shadow), var(--tw-shadow);
+  }
+  .shadow-xs {
+    --tw-shadow: 0 1px 2px 0 var(--tw-shadow-color, rgb(0 0 0 / 0.05));
+    box-shadow: var(--tw-inset-shadow), var(--tw-inset-ring-shadow), var(--tw-ring-offset-shadow), var(--tw-ring-shadow), var(--tw-shadow);
+  }
+  .transition {
+    transition-property: color, background-color, border-color, outline-color, text-decoration-color, fill, stroke, --tw-gradient-from, --tw-gradient-via, --tw-gradient-to, opacity, box-shadow, transform, translate, scale, rotate, filter, -webkit-backdrop-filter, backdrop-filter, display, content-visibility, overlay, pointer-events;
+    transition-timing-function: var(--tw-ease, var(--default-transition-timing-function));
+    transition-duration: var(--tw-duration, var(--default-transition-duration));
+  }
+  .select-none {
+    -webkit-user-select: none;
+    user-select: none;
+  }
+  .hover\:bg-indigo-700 {
+    &:hover {
+      @media (hover: hover) {
+        background-color: var(--color-indigo-700);
+      }
+    }
+  }
+  .hover\:bg-orange-600 {
+    &:hover {
+      @media (hover: hover) {
+        background-color: var(--color-orange-600);
+      }
+    }
+  }
+  .hover\:bg-red-600 {
+    &:hover {
+      @media (hover: hover) {
+        background-color: var(--color-red-600);
+      }
+    }
+  }
+  .hover\:bg-slate-900 {
+    &:hover {
+      @media (hover: hover) {
+        background-color: var(--color-slate-900);
+      }
+    }
+  }
+  .hover\:underline {
+    &:hover {
+      @media (hover: hover) {
+        text-decoration-line: underline;
+      }
+    }
+  }
+  .focus\:outline-none {
+    &:focus {
+      --tw-outline-style: none;
+      outline-style: none;
+    }
+  }
+  .md\:col-span-2 {
+    @media (width >= 48rem) {
+      grid-column: span 2 / span 2;
+    }
+  }
+  .md\:grid-cols-2 {
+    @media (width >= 48rem) {
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+  }
+  .md\:grid-cols-4 {
+    @media (width >= 48rem) {
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+    }
+  }
+  .md\:p-6 {
+    @media (width >= 48rem) {
+      padding: calc(var(--spacing) * 6);
+    }
+  }
+  .lg\:flex-row {
+    @media (width >= 64rem) {
+      flex-direction: row;
+    }
+  }
+  .lg\:items-center {
+    @media (width >= 64rem) {
+      align-items: center;
+    }
+  }
+  .xl\:col-span-1 {
+    @media (width >= 80rem) {
+      grid-column: span 1 / span 1;
+    }
+  }
+  .xl\:col-span-3 {
+    @media (width >= 80rem) {
+      grid-column: span 3 / span 3;
+    }
+  }
+  .xl\:grid-cols-4 {
+    @media (width >= 80rem) {
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+    }
+  }
+}
+@property --tw-space-y-reverse {
+  syntax: "*";
+  inherits: false;
+  initial-value: 0;
+}
+@property --tw-divide-y-reverse {
+  syntax: "*";
+  inherits: false;
+  initial-value: 0;
+}
+@property --tw-border-style {
+  syntax: "*";
+  inherits: false;
+  initial-value: solid;
+}
+@property --tw-font-weight {
+  syntax: "*";
+  inherits: false;
+}
+@property --tw-tracking {
+  syntax: "*";
+  inherits: false;
+}
+@property --tw-shadow {
+  syntax: "*";
+  inherits: false;
+  initial-value: 0 0 #0000;
+}
+@property --tw-shadow-color {
+  syntax: "*";
+  inherits: false;
+}
+@property --tw-shadow-alpha {
+  syntax: "<percentage>";
+  inherits: false;
+  initial-value: 100%;
+}
+@property --tw-inset-shadow {
+  syntax: "*";
+  inherits: false;
+  initial-value: 0 0 #0000;
+}
+@property --tw-inset-shadow-color {
+  syntax: "*";
+  inherits: false;
+}
+@property --tw-inset-shadow-alpha {
+  syntax: "<percentage>";
+  inherits: false;
+  initial-value: 100%;
+}
+@property --tw-ring-color {
+  syntax: "*";
+  inherits: false;
+}
+@property --tw-ring-shadow {
+  syntax: "*";
+  inherits: false;
+  initial-value: 0 0 #0000;
+}
+@property --tw-inset-ring-color {
+  syntax: "*";
+  inherits: false;
+}
+@property --tw-inset-ring-shadow {
+  syntax: "*";
+  inherits: false;
+  initial-value: 0 0 #0000;
+}
+@property --tw-ring-inset {
+  syntax: "*";
+  inherits: false;
+}
+@property --tw-ring-offset-width {
+  syntax: "<length>";
+  inherits: false;
+  initial-value: 0px;
+}
+@property --tw-ring-offset-color {
+  syntax: "*";
+  inherits: false;
+  initial-value: #fff;
+}
+@property --tw-ring-offset-shadow {
+  syntax: "*";
+  inherits: false;
+  initial-value: 0 0 #0000;
+}
+@layer properties {
+  @supports ((-webkit-hyphens: none) and (not (margin-trim: inline))) or ((-moz-orient: inline) and (not (color:rgb(from red r g b)))) {
+    *, ::before, ::after, ::backdrop {
+      --tw-space-y-reverse: 0;
+      --tw-divide-y-reverse: 0;
+      --tw-border-style: solid;
+      --tw-font-weight: initial;
+      --tw-tracking: initial;
+      --tw-shadow: 0 0 #0000;
+      --tw-shadow-color: initial;
+      --tw-shadow-alpha: 100%;
+      --tw-inset-shadow: 0 0 #0000;
+      --tw-inset-shadow-color: initial;
+      --tw-inset-shadow-alpha: 100%;
+      --tw-ring-color: initial;
+      --tw-ring-shadow: 0 0 #0000;
+      --tw-inset-ring-color: initial;
+      --tw-inset-ring-shadow: 0 0 #0000;
+      --tw-ring-inset: initial;
+      --tw-ring-offset-width: 0px;
+      --tw-ring-offset-color: #fff;
+      --tw-ring-offset-shadow: 0 0 #0000;
+    }
+  }
+}
+</style>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.18.5/xlsx.full.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/pptxgenjs@3.12.0/dist/pptxgen.bundle.js"></script>
+
+    <style>
+        :root { --bg-main: #f0f4f8; --card-bg: #ffffff; --text: #0f172a; }
+        body { background-color: var(--bg-main); color: var(--text); font-family: system-ui, sans-serif; transition: 0.2s; }
+        .bi-card { background-color: var(--card-bg); border: 1px solid rgba(15, 23, 42, 0.08); border-radius: 16px; box-shadow: 0 4px 6px -1px rgba(0,0,0,0.01); padding: 1.25rem; }
+        .tab-btn.active { border-bottom: 3px solid #4f46e5; color: #4f46e5; font-weight: bold; }
+        
+        .slicer-item { padding: 6px 10px; font-size: 11px; font-weight: 500; border-radius: 6px; cursor: pointer; transition: 0.15s; background: #f8fafc; border: 1px solid #e2e8f0; display: flex; justify-content: space-between; align-items: center; }
+        .slicer-item:hover { background: #e0e7ff; color: #4f46e5; }
+        .slicer-item.active-filter { background: #4f46e5; color: white; border-color: #4f46e5; font-weight: bold; }
+
+        .model-table-card { background: #ffffff; border: 2px solid #64748b; border-radius: 8px; width: 190px; position: absolute; box-shadow: 0 4px 6px -1px rgba(0,0,0,0.1); z-index: 20; }
+        .model-table-header { background: #64748b; color: white; padding: 6px; font-size: 11px; font-weight: bold; text-align: center; cursor: move; }
+        .model-column-item { padding: 6px 8px; font-size: 11px; color: #334155; border-bottom: 1px solid #f1f5f9; display: flex; justify-content: space-between; align-items: center; }
+        
+        @media print { .no-print, header { display: none !important; } .print-full { width: 100% !important; grid-template-columns: 1fr !important; } }
+    </style>
+</head>
+<body class="p-4 md:p-6">
+
+    <header class="max-w-7xl mx-auto mb-6 flex flex-col lg:flex-row justify-between items-start lg:items-center gap-4 no-print border-b pb-4 border-slate-200">
+        <div>
+            <h1 class="text-2xl font-black tracking-tight text-slate-900">STUDIO ANALYTICS BI</h1>
+            <nav class="flex gap-4 mt-2">
+                <button onclick="switchTab('dashboard')" id="tab-dashboard" class="tab-btn active pb-1 text-sm transition">📊 Dashboard View</button>
+                <button onclick="switchTab('dataview')" id="tab-dataview" class="tab-btn pb-1 text-sm transition">🗂️ Data View</button>
+                <button onclick="switchTab('modelview')" id="tab-modelview" class="tab-btn pb-1 text-sm transition">🔗 Model View (Relationships)</button>
+            </nav>
+        </div>
+
+        <div class="flex flex-wrap gap-2">
+            <label class="bg-indigo-600 hover:bg-indigo-700 text-white font-bold text-xs py-2.5 px-4 rounded-xl cursor-pointer shadow-sm transition">
+                📂 Import CSV/Excel
+                <input type="file" id="file-input" accept=".csv, .xlsx" multiple="" class="hidden">
+            </label>
+            <button onclick="window.print()" class="bg-red-500 hover:bg-red-600 text-white font-bold text-xs py-2.5 px-4 rounded-xl shadow-sm transition">Doc Save PDF</button>
+            <button onclick="saveAsPPT()" class="bg-orange-500 hover:bg-orange-600 text-white font-bold text-xs py-2.5 px-4 rounded-xl shadow-sm transition">Doc Save PPT</button>
+            <button onclick="document.getElementById('github-modal').style.display='flex'" class="bg-black hover:bg-slate-900 text-white font-bold text-xs py-2.5 px-4 rounded-xl shadow-sm transition">🚀 GitHub Sync</button>
+        </div>
+    </header>
+
+    <section id="view-dashboard" class="max-w-7xl mx-auto grid grid-cols-1 xl:grid-cols-4 gap-6">
+        <div class="xl:col-span-3 space-y-6 print-full">
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
+                <div class="bi-card flex flex-col items-center select-none cursor-pointer" id="kcard-sum" ondblclick="editKpiInline(this, 'sum')">
+                    <p class="text-[10px] uppercase font-bold text-slate-400 tracking-wider">Total Sales (Sum)</p>
+                    <h2 class="text-2xl font-black text-indigo-600 live-kpi-node mt-1" id="kpi-sum" data-agg="sum" data-field=" Amount ">₹9,73,700</h2>
+                    <span class="text-[9px] text-slate-300 mt-1 block">Double-Click to Edit</span>
+                </div>
+                <div class="bi-card flex flex-col items-center select-none cursor-pointer" id="kcard-avg" ondblclick="editKpiInline(this, 'avg')">
+                    <p class="text-[10px] uppercase font-bold text-slate-400 tracking-wider">Average Ticket</p>
+                    <h2 class="text-2xl font-black text-emerald-600 live-kpi-node mt-1" id="kpi-avg" data-agg="avg" data-field=" Amount ">₹32,456.7</h2>
+                    <span class="text-[9px] text-slate-300 mt-1 block">Double-Click to Edit</span>
+                </div>
+                <div class="bi-card flex flex-col items-center select-none cursor-pointer" id="kcard-max" ondblclick="editKpiInline(this, 'max')">
+                    <p class="text-[10px] uppercase font-bold text-slate-400 tracking-wider">Peak Profit (Max)</p>
+                    <h2 class="text-2xl font-black text-amber-600 live-kpi-node mt-1" id="kpi-max" data-agg="max" data-field=" Amount ">₹99,000</h2>
+                    <span class="text-[9px] text-slate-300 mt-1 block">Double-Click to Edit</span>
+                </div>
+                <div class="bi-card flex flex-col items-center select-none cursor-pointer" id="kcard-count" ondblclick="editKpiInline(this, 'count')">
+                    <p class="text-[10px] uppercase font-bold text-slate-400 tracking-wider">Total Orders</p>
+                    <h2 class="text-2xl font-black text-purple-600 live-kpi-node mt-1" id="kpi-count" data-agg="count" data-field=" Amount ">30</h2>
+                    <span class="text-[9px] text-slate-300 mt-1 block">Double-Click to Edit</span>
+                </div>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                <div class="bi-card flex flex-col select-none min-h-[320px]" id="block-ch-bar" ondblclick="editChartInline('ch-bar')">
+                    <p class="text-xs uppercase font-bold text-slate-400 tracking-wider mb-2">Category Wise Distribution</p>
+                    <div class="w-full flex-1 relative min-h-[240px]"><canvas id="canvas-ch-bar" style="box-sizing: border-box; display: block; height: 254.7px; width: 399.9px;" width="599" height="382"></canvas></div>
+                </div>
+                <div class="bi-card flex flex-col select-none min-h-[320px]" id="block-ch-line" ondblclick="editChartInline('ch-line')">
+                    <p class="text-xs uppercase font-bold text-slate-400 tracking-wider mb-2">Month Wise Metrics</p>
+                    <div class="w-full flex-1 relative min-h-[240px]"><canvas id="canvas-ch-line" style="box-sizing: border-box; display: block; height: 254.7px; width: 399.9px;" width="599" height="382"></canvas></div>
+                </div>
+                <div class="bi-card flex flex-col select-none min-h-[320px] md:col-span-2" id="block-ch-pie" ondblclick="editChartInline('ch-pie')">
+                    <p class="text-xs uppercase font-bold text-slate-400 tracking-wider mb-2">Payment Mode Share</p>
+                    <div class="w-full flex-1 relative min-h-[240px]"><canvas id="canvas-ch-pie" style="box-sizing: border-box; display: block; height: 300px; width: 865.2px;" width="1297" height="450"></canvas></div>
+                </div>
+            </div>
+        </div>
+
+        <div class="xl:col-span-1 space-y-4 no-print">
+            <div class="bi-card bg-white shadow-xs p-4 border border-slate-200" style="height: auto;">
+                <div class="flex justify-between items-center mb-1">
+                    <h3 class="text-xs font-bold uppercase text-slate-400 tracking-wider">Active Filters Status</h3>
+                    <button onclick="clearAllFilters()" id="btn-global-clear" class="text-[10px] text-red-500 font-bold hover:underline hidden">Reset All</button>
+                </div>
+                <div id="filter-badge-status" class="text-[11px] font-bold text-slate-600 bg-slate-50 p-2 rounded-lg text-center mt-1">Saara Data Loaded (No Active Filters)</div>
+            </div>
+
+            <div class="bi-card bg-white shadow-xs flex flex-col gap-2" style="height: auto;">
+                <div class="flex justify-between items-center border-b pb-1.5 border-slate-100">
+                    <span class="text-xs font-black uppercase text-slate-700 tracking-wide" id="slicer-title-1">DATE</span>
+                    <span class="text-[10px] text-indigo-500 cursor-pointer hover:underline" onclick="clearSpecificFilter('slicer1')">Clear</span>
+                </div>
+                <div id="slicer-container-1" class="flex flex-col gap-1.5 max-h-[160px] overflow-y-auto pr-1"><div class="slicer-item" data-value="45292" onclick="toggleSlicerFilter(1, '45292')"><span>45292</span></div><div class="slicer-item" data-value="45323" onclick="toggleSlicerFilter(1, '45323')"><span>45323</span></div><div class="slicer-item" data-value="45352" onclick="toggleSlicerFilter(1, '45352')"><span>45352</span></div><div class="slicer-item" data-value="45383" onclick="toggleSlicerFilter(1, '45383')"><span>45383</span></div><div class="slicer-item" data-value="45413" onclick="toggleSlicerFilter(1, '45413')"><span>45413</span></div><div class="slicer-item" data-value="45444" onclick="toggleSlicerFilter(1, '45444')"><span>45444</span></div><div class="slicer-item" data-value="45474" onclick="toggleSlicerFilter(1, '45474')"><span>45474</span></div><div class="slicer-item" data-value="45505" onclick="toggleSlicerFilter(1, '45505')"><span>45505</span></div><div class="slicer-item" data-value="45536" onclick="toggleSlicerFilter(1, '45536')"><span>45536</span></div><div class="slicer-item" data-value="45566" onclick="toggleSlicerFilter(1, '45566')"><span>45566</span></div><div class="slicer-item" data-value="45597" onclick="toggleSlicerFilter(1, '45597')"><span>45597</span></div><div class="slicer-item" data-value="45627" onclick="toggleSlicerFilter(1, '45627')"><span>45627</span></div><div class="slicer-item" data-value="45658" onclick="toggleSlicerFilter(1, '45658')"><span>45658</span></div><div class="slicer-item" data-value="45689" onclick="toggleSlicerFilter(1, '45689')"><span>45689</span></div><div class="slicer-item" data-value="45717" onclick="toggleSlicerFilter(1, '45717')"><span>45717</span></div><div class="slicer-item" data-value="45748" onclick="toggleSlicerFilter(1, '45748')"><span>45748</span></div><div class="slicer-item" data-value="45778" onclick="toggleSlicerFilter(1, '45778')"><span>45778</span></div><div class="slicer-item" data-value="45809" onclick="toggleSlicerFilter(1, '45809')"><span>45809</span></div><div class="slicer-item" data-value="45839" onclick="toggleSlicerFilter(1, '45839')"><span>45839</span></div><div class="slicer-item" data-value="45870" onclick="toggleSlicerFilter(1, '45870')"><span>45870</span></div><div class="slicer-item" data-value="45901" onclick="toggleSlicerFilter(1, '45901')"><span>45901</span></div><div class="slicer-item" data-value="45931" onclick="toggleSlicerFilter(1, '45931')"><span>45931</span></div><div class="slicer-item" data-value="45962" onclick="toggleSlicerFilter(1, '45962')"><span>45962</span></div><div class="slicer-item" data-value="45992" onclick="toggleSlicerFilter(1, '45992')"><span>45992</span></div><div class="slicer-item" data-value="46023" onclick="toggleSlicerFilter(1, '46023')"><span>46023</span></div><div class="slicer-item" data-value="46054" onclick="toggleSlicerFilter(1, '46054')"><span>46054</span></div><div class="slicer-item" data-value="46082" onclick="toggleSlicerFilter(1, '46082')"><span>46082</span></div><div class="slicer-item" data-value="46113" onclick="toggleSlicerFilter(1, '46113')"><span>46113</span></div><div class="slicer-item" data-value="46143" onclick="toggleSlicerFilter(1, '46143')"><span>46143</span></div><div class="slicer-item" data-value="46174" onclick="toggleSlicerFilter(1, '46174')"><span>46174</span></div></div>
+            </div>
+
+            <div class="bi-card bg-white shadow-xs flex flex-col gap-2" style="height: auto;">
+                <div class="flex justify-between items-center border-b pb-1.5 border-slate-100">
+                    <span class="text-xs font-black uppercase text-slate-700 tracking-wide" id="slicer-title-2">CARD_TYPE</span>
+                    <span class="text-[10px] text-indigo-500 cursor-pointer hover:underline" onclick="clearSpecificFilter('slicer2')">Clear</span>
+                </div>
+                <div id="slicer-container-2" class="flex flex-col gap-1.5 max-h-[160px] overflow-y-auto pr-1"><div class="slicer-item" data-value="Visa" onclick="toggleSlicerFilter(2, 'Visa')"><span>Visa</span></div><div class="slicer-item" data-value="MasterCard" onclick="toggleSlicerFilter(2, 'MasterCard')"><span>MasterCard</span></div><div class="slicer-item" data-value="RuPay" onclick="toggleSlicerFilter(2, 'RuPay')"><span>RuPay</span></div></div>
+            </div>
+        </div>
+    </section>
+
+    <section id="view-dataview" class="max-w-7xl mx-auto hidden bi-card p-6 overflow-x-auto bg-white text-slate-800">
+        <h2 class="text-lg font-black mb-4">Active Sheet Dataset Browser</h2>
+        <div class="max-h-[500px] overflow-y-auto">
+            <table class="w-full text-left border-collapse text-xs">
+                <thead class="bg-slate-100 uppercase sticky top-0" id="table-head"><tr><th class="p-3 border-b border-slate-200">Transaction_ID</th><th class="p-3 border-b border-slate-200">Date</th><th class="p-3 border-b border-slate-200">Customer_ID</th><th class="p-3 border-b border-slate-200">Card_Type</th><th class="p-3 border-b border-slate-200">Merchant_Category</th><th class="p-3 border-b border-slate-200"> Amount </th><th class="p-3 border-b border-slate-200">Country</th><th class="p-3 border-b border-slate-200">Mode</th><th class="p-3 border-b border-slate-200">International</th><th class="p-3 border-b border-slate-200">Hour</th><th class="p-3 border-b border-slate-200">Fraud</th></tr></thead>
+                <tbody id="table-body" class="divide-y divide-slate-200"><tr><td class="p-3 border-b border-slate-100">T001</td><td class="p-3 border-b border-slate-100">45292</td><td class="p-3 border-b border-slate-100">C101</td><td class="p-3 border-b border-slate-100">Visa</td><td class="p-3 border-b border-slate-100">Grocery</td><td class="p-3 border-b border-slate-100">1200</td><td class="p-3 border-b border-slate-100">India</td><td class="p-3 border-b border-slate-100">Swipe</td><td class="p-3 border-b border-slate-100">No</td><td class="p-3 border-b border-slate-100">10</td><td class="p-3 border-b border-slate-100">0</td></tr><tr><td class="p-3 border-b border-slate-100">T002</td><td class="p-3 border-b border-slate-100">45323</td><td class="p-3 border-b border-slate-100">C102</td><td class="p-3 border-b border-slate-100">MasterCard</td><td class="p-3 border-b border-slate-100">Electronics</td><td class="p-3 border-b border-slate-100">45000</td><td class="p-3 border-b border-slate-100">India</td><td class="p-3 border-b border-slate-100">Online</td><td class="p-3 border-b border-slate-100">No</td><td class="p-3 border-b border-slate-100">22</td><td class="p-3 border-b border-slate-100">1</td></tr><tr><td class="p-3 border-b border-slate-100">T003</td><td class="p-3 border-b border-slate-100">45352</td><td class="p-3 border-b border-slate-100">C103</td><td class="p-3 border-b border-slate-100">Visa</td><td class="p-3 border-b border-slate-100">Fuel</td><td class="p-3 border-b border-slate-100">3500</td><td class="p-3 border-b border-slate-100">India</td><td class="p-3 border-b border-slate-100">Chip</td><td class="p-3 border-b border-slate-100">No</td><td class="p-3 border-b border-slate-100">8</td><td class="p-3 border-b border-slate-100">0</td></tr><tr><td class="p-3 border-b border-slate-100">T004</td><td class="p-3 border-b border-slate-100">45383</td><td class="p-3 border-b border-slate-100">C104</td><td class="p-3 border-b border-slate-100">RuPay</td><td class="p-3 border-b border-slate-100">Travel</td><td class="p-3 border-b border-slate-100">78000</td><td class="p-3 border-b border-slate-100">USA</td><td class="p-3 border-b border-slate-100">Online</td><td class="p-3 border-b border-slate-100">Yes</td><td class="p-3 border-b border-slate-100">2</td><td class="p-3 border-b border-slate-100">1</td></tr><tr><td class="p-3 border-b border-slate-100">T005</td><td class="p-3 border-b border-slate-100">45413</td><td class="p-3 border-b border-slate-100">C105</td><td class="p-3 border-b border-slate-100">Visa</td><td class="p-3 border-b border-slate-100">Shopping</td><td class="p-3 border-b border-slate-100">5600</td><td class="p-3 border-b border-slate-100">India</td><td class="p-3 border-b border-slate-100">Online</td><td class="p-3 border-b border-slate-100">No</td><td class="p-3 border-b border-slate-100">14</td><td class="p-3 border-b border-slate-100">0</td></tr><tr><td class="p-3 border-b border-slate-100">T006</td><td class="p-3 border-b border-slate-100">45444</td><td class="p-3 border-b border-slate-100">C101</td><td class="p-3 border-b border-slate-100">Visa</td><td class="p-3 border-b border-slate-100">ATM</td><td class="p-3 border-b border-slate-100">20000</td><td class="p-3 border-b border-slate-100">India</td><td class="p-3 border-b border-slate-100">ATM</td><td class="p-3 border-b border-slate-100">No</td><td class="p-3 border-b border-slate-100">1</td><td class="p-3 border-b border-slate-100">1</td></tr><tr><td class="p-3 border-b border-slate-100">T007</td><td class="p-3 border-b border-slate-100">45474</td><td class="p-3 border-b border-slate-100">C106</td><td class="p-3 border-b border-slate-100">MasterCard</td><td class="p-3 border-b border-slate-100">Restaurant</td><td class="p-3 border-b border-slate-100">1800</td><td class="p-3 border-b border-slate-100">India</td><td class="p-3 border-b border-slate-100">Tap</td><td class="p-3 border-b border-slate-100">No</td><td class="p-3 border-b border-slate-100">20</td><td class="p-3 border-b border-slate-100">0</td></tr><tr><td class="p-3 border-b border-slate-100">T008</td><td class="p-3 border-b border-slate-100">45505</td><td class="p-3 border-b border-slate-100">C107</td><td class="p-3 border-b border-slate-100">Visa</td><td class="p-3 border-b border-slate-100">Electronics</td><td class="p-3 border-b border-slate-100">92000</td><td class="p-3 border-b border-slate-100">Germany</td><td class="p-3 border-b border-slate-100">Online</td><td class="p-3 border-b border-slate-100">Yes</td><td class="p-3 border-b border-slate-100">3</td><td class="p-3 border-b border-slate-100">1</td></tr><tr><td class="p-3 border-b border-slate-100">T009</td><td class="p-3 border-b border-slate-100">45536</td><td class="p-3 border-b border-slate-100">C108</td><td class="p-3 border-b border-slate-100">RuPay</td><td class="p-3 border-b border-slate-100">Grocery</td><td class="p-3 border-b border-slate-100">900</td><td class="p-3 border-b border-slate-100">India</td><td class="p-3 border-b border-slate-100">Swipe</td><td class="p-3 border-b border-slate-100">No</td><td class="p-3 border-b border-slate-100">9</td><td class="p-3 border-b border-slate-100">0</td></tr><tr><td class="p-3 border-b border-slate-100">T010</td><td class="p-3 border-b border-slate-100">45566</td><td class="p-3 border-b border-slate-100">C109</td><td class="p-3 border-b border-slate-100">Visa</td><td class="p-3 border-b border-slate-100">Travel</td><td class="p-3 border-b border-slate-100">67000</td><td class="p-3 border-b border-slate-100">UK</td><td class="p-3 border-b border-slate-100">Online</td><td class="p-3 border-b border-slate-100">Yes</td><td class="p-3 border-b border-slate-100">0</td><td class="p-3 border-b border-slate-100">1</td></tr><tr><td class="p-3 border-b border-slate-100">T011</td><td class="p-3 border-b border-slate-100">45597</td><td class="p-3 border-b border-slate-100">C110</td><td class="p-3 border-b border-slate-100">MasterCard</td><td class="p-3 border-b border-slate-100">Shopping</td><td class="p-3 border-b border-slate-100">4500</td><td class="p-3 border-b border-slate-100">India</td><td class="p-3 border-b border-slate-100">Online</td><td class="p-3 border-b border-slate-100">No</td><td class="p-3 border-b border-slate-100">16</td><td class="p-3 border-b border-slate-100">0</td></tr><tr><td class="p-3 border-b border-slate-100">T012</td><td class="p-3 border-b border-slate-100">45627</td><td class="p-3 border-b border-slate-100">C102</td><td class="p-3 border-b border-slate-100">MasterCard</td><td class="p-3 border-b border-slate-100">ATM</td><td class="p-3 border-b border-slate-100">30000</td><td class="p-3 border-b border-slate-100">India</td><td class="p-3 border-b border-slate-100">ATM</td><td class="p-3 border-b border-slate-100">No</td><td class="p-3 border-b border-slate-100">2</td><td class="p-3 border-b border-slate-100">1</td></tr><tr><td class="p-3 border-b border-slate-100">T013</td><td class="p-3 border-b border-slate-100">45658</td><td class="p-3 border-b border-slate-100">C111</td><td class="p-3 border-b border-slate-100">Visa</td><td class="p-3 border-b border-slate-100">Restaurant</td><td class="p-3 border-b border-slate-100">2100</td><td class="p-3 border-b border-slate-100">India</td><td class="p-3 border-b border-slate-100">Tap</td><td class="p-3 border-b border-slate-100">No</td><td class="p-3 border-b border-slate-100">19</td><td class="p-3 border-b border-slate-100">0</td></tr><tr><td class="p-3 border-b border-slate-100">T014</td><td class="p-3 border-b border-slate-100">45689</td><td class="p-3 border-b border-slate-100">C112</td><td class="p-3 border-b border-slate-100">Visa</td><td class="p-3 border-b border-slate-100">Electronics</td><td class="p-3 border-b border-slate-100">88000</td><td class="p-3 border-b border-slate-100">Singapore</td><td class="p-3 border-b border-slate-100">Online</td><td class="p-3 border-b border-slate-100">Yes</td><td class="p-3 border-b border-slate-100">4</td><td class="p-3 border-b border-slate-100">1</td></tr><tr><td class="p-3 border-b border-slate-100">T015</td><td class="p-3 border-b border-slate-100">45717</td><td class="p-3 border-b border-slate-100">C113</td><td class="p-3 border-b border-slate-100">RuPay</td><td class="p-3 border-b border-slate-100">Fuel</td><td class="p-3 border-b border-slate-100">2600</td><td class="p-3 border-b border-slate-100">India</td><td class="p-3 border-b border-slate-100">Chip</td><td class="p-3 border-b border-slate-100">No</td><td class="p-3 border-b border-slate-100">7</td><td class="p-3 border-b border-slate-100">0</td></tr><tr><td class="p-3 border-b border-slate-100">T016</td><td class="p-3 border-b border-slate-100">45748</td><td class="p-3 border-b border-slate-100">C114</td><td class="p-3 border-b border-slate-100">Visa</td><td class="p-3 border-b border-slate-100">Electronics</td><td class="p-3 border-b border-slate-100">51000</td><td class="p-3 border-b border-slate-100">India</td><td class="p-3 border-b border-slate-100">Online</td><td class="p-3 border-b border-slate-100">No</td><td class="p-3 border-b border-slate-100">23</td><td class="p-3 border-b border-slate-100">1</td></tr><tr><td class="p-3 border-b border-slate-100">T017</td><td class="p-3 border-b border-slate-100">45778</td><td class="p-3 border-b border-slate-100">C115</td><td class="p-3 border-b border-slate-100">MasterCard</td><td class="p-3 border-b border-slate-100">Travel</td><td class="p-3 border-b border-slate-100">74000</td><td class="p-3 border-b border-slate-100">Canada</td><td class="p-3 border-b border-slate-100">Online</td><td class="p-3 border-b border-slate-100">Yes</td><td class="p-3 border-b border-slate-100">1</td><td class="p-3 border-b border-slate-100">1</td></tr><tr><td class="p-3 border-b border-slate-100">T018</td><td class="p-3 border-b border-slate-100">45809</td><td class="p-3 border-b border-slate-100">C116</td><td class="p-3 border-b border-slate-100">RuPay</td><td class="p-3 border-b border-slate-100">Grocery</td><td class="p-3 border-b border-slate-100">1500</td><td class="p-3 border-b border-slate-100">India</td><td class="p-3 border-b border-slate-100">Swipe</td><td class="p-3 border-b border-slate-100">No</td><td class="p-3 border-b border-slate-100">11</td><td class="p-3 border-b border-slate-100">0</td></tr><tr><td class="p-3 border-b border-slate-100">T019</td><td class="p-3 border-b border-slate-100">45839</td><td class="p-3 border-b border-slate-100">C117</td><td class="p-3 border-b border-slate-100">Visa</td><td class="p-3 border-b border-slate-100">ATM</td><td class="p-3 border-b border-slate-100">25000</td><td class="p-3 border-b border-slate-100">India</td><td class="p-3 border-b border-slate-100">ATM</td><td class="p-3 border-b border-slate-100">No</td><td class="p-3 border-b border-slate-100">0</td><td class="p-3 border-b border-slate-100">1</td></tr><tr><td class="p-3 border-b border-slate-100">T020</td><td class="p-3 border-b border-slate-100">45870</td><td class="p-3 border-b border-slate-100">C118</td><td class="p-3 border-b border-slate-100">MasterCard</td><td class="p-3 border-b border-slate-100">Restaurant</td><td class="p-3 border-b border-slate-100">2200</td><td class="p-3 border-b border-slate-100">India</td><td class="p-3 border-b border-slate-100">Tap</td><td class="p-3 border-b border-slate-100">No</td><td class="p-3 border-b border-slate-100">21</td><td class="p-3 border-b border-slate-100">0</td></tr><tr><td class="p-3 border-b border-slate-100">T021</td><td class="p-3 border-b border-slate-100">45901</td><td class="p-3 border-b border-slate-100">C119</td><td class="p-3 border-b border-slate-100">Visa</td><td class="p-3 border-b border-slate-100">Electronics</td><td class="p-3 border-b border-slate-100">99000</td><td class="p-3 border-b border-slate-100">France</td><td class="p-3 border-b border-slate-100">Online</td><td class="p-3 border-b border-slate-100">Yes</td><td class="p-3 border-b border-slate-100">3</td><td class="p-3 border-b border-slate-100">1</td></tr><tr><td class="p-3 border-b border-slate-100">T022</td><td class="p-3 border-b border-slate-100">45931</td><td class="p-3 border-b border-slate-100">C120</td><td class="p-3 border-b border-slate-100">RuPay</td><td class="p-3 border-b border-slate-100">Grocery</td><td class="p-3 border-b border-slate-100">1100</td><td class="p-3 border-b border-slate-100">India</td><td class="p-3 border-b border-slate-100">Swipe</td><td class="p-3 border-b border-slate-100">No</td><td class="p-3 border-b border-slate-100">10</td><td class="p-3 border-b border-slate-100">0</td></tr><tr><td class="p-3 border-b border-slate-100">T023</td><td class="p-3 border-b border-slate-100">45962</td><td class="p-3 border-b border-slate-100">C121</td><td class="p-3 border-b border-slate-100">Visa</td><td class="p-3 border-b border-slate-100">Travel</td><td class="p-3 border-b border-slate-100">68000</td><td class="p-3 border-b border-slate-100">Australia</td><td class="p-3 border-b border-slate-100">Online</td><td class="p-3 border-b border-slate-100">Yes</td><td class="p-3 border-b border-slate-100">2</td><td class="p-3 border-b border-slate-100">1</td></tr><tr><td class="p-3 border-b border-slate-100">T024</td><td class="p-3 border-b border-slate-100">45992</td><td class="p-3 border-b border-slate-100">C122</td><td class="p-3 border-b border-slate-100">MasterCard</td><td class="p-3 border-b border-slate-100">Shopping</td><td class="p-3 border-b border-slate-100">5200</td><td class="p-3 border-b border-slate-100">India</td><td class="p-3 border-b border-slate-100">Online</td><td class="p-3 border-b border-slate-100">No</td><td class="p-3 border-b border-slate-100">15</td><td class="p-3 border-b border-slate-100">0</td></tr><tr><td class="p-3 border-b border-slate-100">T025</td><td class="p-3 border-b border-slate-100">46023</td><td class="p-3 border-b border-slate-100">C123</td><td class="p-3 border-b border-slate-100">Visa</td><td class="p-3 border-b border-slate-100">ATM</td><td class="p-3 border-b border-slate-100">40000</td><td class="p-3 border-b border-slate-100">India</td><td class="p-3 border-b border-slate-100">ATM</td><td class="p-3 border-b border-slate-100">No</td><td class="p-3 border-b border-slate-100">1</td><td class="p-3 border-b border-slate-100">1</td></tr><tr><td class="p-3 border-b border-slate-100">T026</td><td class="p-3 border-b border-slate-100">46054</td><td class="p-3 border-b border-slate-100">C124</td><td class="p-3 border-b border-slate-100">RuPay</td><td class="p-3 border-b border-slate-100">Fuel</td><td class="p-3 border-b border-slate-100">2700</td><td class="p-3 border-b border-slate-100">India</td><td class="p-3 border-b border-slate-100">Chip</td><td class="p-3 border-b border-slate-100">No</td><td class="p-3 border-b border-slate-100">6</td><td class="p-3 border-b border-slate-100">0</td></tr><tr><td class="p-3 border-b border-slate-100">T027</td><td class="p-3 border-b border-slate-100">46082</td><td class="p-3 border-b border-slate-100">C125</td><td class="p-3 border-b border-slate-100">Visa</td><td class="p-3 border-b border-slate-100">Electronics</td><td class="p-3 border-b border-slate-100">86000</td><td class="p-3 border-b border-slate-100">Dubai</td><td class="p-3 border-b border-slate-100">Online</td><td class="p-3 border-b border-slate-100">Yes</td><td class="p-3 border-b border-slate-100">4</td><td class="p-3 border-b border-slate-100">1</td></tr><tr><td class="p-3 border-b border-slate-100">T028</td><td class="p-3 border-b border-slate-100">46113</td><td class="p-3 border-b border-slate-100">C126</td><td class="p-3 border-b border-slate-100">MasterCard</td><td class="p-3 border-b border-slate-100">Grocery</td><td class="p-3 border-b border-slate-100">1300</td><td class="p-3 border-b border-slate-100">India</td><td class="p-3 border-b border-slate-100">Swipe</td><td class="p-3 border-b border-slate-100">No</td><td class="p-3 border-b border-slate-100">12</td><td class="p-3 border-b border-slate-100">0</td></tr><tr><td class="p-3 border-b border-slate-100">T029</td><td class="p-3 border-b border-slate-100">46143</td><td class="p-3 border-b border-slate-100">C127</td><td class="p-3 border-b border-slate-100">Visa</td><td class="p-3 border-b border-slate-100">Travel</td><td class="p-3 border-b border-slate-100">72000</td><td class="p-3 border-b border-slate-100">Thailand</td><td class="p-3 border-b border-slate-100">Online</td><td class="p-3 border-b border-slate-100">Yes</td><td class="p-3 border-b border-slate-100">1</td><td class="p-3 border-b border-slate-100">1</td></tr><tr><td class="p-3 border-b border-slate-100">T030</td><td class="p-3 border-b border-slate-100">46174</td><td class="p-3 border-b border-slate-100">C128</td><td class="p-3 border-b border-slate-100">RuPay</td><td class="p-3 border-b border-slate-100">Restaurant</td><td class="p-3 border-b border-slate-100">2500</td><td class="p-3 border-b border-slate-100">India</td><td class="p-3 border-b border-slate-100">Tap</td><td class="p-3 border-b border-slate-100">No</td><td class="p-3 border-b border-slate-100">20</td><td class="p-3 border-b border-slate-100">0</td></tr></tbody>
+            </table>
+        </div>
+    </section>
+
+    <section id="view-modelview" class="max-w-7xl mx-auto hidden bi-card p-6 bg-white text-slate-800 h-[650px] relative border-2 border-dashed border-slate-300">
+        <canvas id="relation-canvas" class="absolute inset-0 w-full h-full z-10 pointer-events-none"></canvas>
+        <div id="model-canvas" class="w-full h-full relative pt-12 z-20"><div class="model-table-card" id="model-card-0" style="left: 40px; top: 60px;"><div class="model-table-header">CreditCardFraudDetection.xlsx</div><div class="model-column-item" id="field-0-0" onclick="handleFieldClick('field-0-0', 'model-card-0')"><span>🔑 Transaction_ID</span> <span class="text-[9px] opacity-40">1:*</span></div><div class="model-column-item" id="field-0-1" onclick="handleFieldClick('field-0-1', 'model-card-0')"><span>🔑 Date</span> <span class="text-[9px] opacity-40">1:*</span></div><div class="model-column-item" id="field-0-2" onclick="handleFieldClick('field-0-2', 'model-card-0')"><span>🔑 Customer_ID</span> <span class="text-[9px] opacity-40">1:*</span></div><div class="model-column-item" id="field-0-3" onclick="handleFieldClick('field-0-3', 'model-card-0')"><span>🔑 Card_Type</span> <span class="text-[9px] opacity-40">1:*</span></div><div class="model-column-item" id="field-0-4" onclick="handleFieldClick('field-0-4', 'model-card-0')"><span>🔑 Merchant_Category</span> <span class="text-[9px] opacity-40">1:*</span></div><div class="model-column-item" id="field-0-5" onclick="handleFieldClick('field-0-5', 'model-card-0')"><span>🔑  Amount </span> <span class="text-[9px] opacity-40">1:*</span></div><div class="model-column-item" id="field-0-6" onclick="handleFieldClick('field-0-6', 'model-card-0')"><span>🔑 Country</span> <span class="text-[9px] opacity-40">1:*</span></div><div class="model-column-item" id="field-0-7" onclick="handleFieldClick('field-0-7', 'model-card-0')"><span>🔑 Mode</span> <span class="text-[9px] opacity-40">1:*</span></div><div class="model-column-item" id="field-0-8" onclick="handleFieldClick('field-0-8', 'model-card-0')"><span>🔑 International</span> <span class="text-[9px] opacity-40">1:*</span></div><div class="model-column-item" id="field-0-9" onclick="handleFieldClick('field-0-9', 'model-card-0')"><span>🔑 Hour</span> <span class="text-[9px] opacity-40">1:*</span></div><div class="model-column-item" id="field-0-10" onclick="handleFieldClick('field-0-10', 'model-card-0')"><span>🔑 Fraud</span> <span class="text-[9px] opacity-40">1:*</span></div></div></div>
+    </section>
+
+    <div id="github-modal" class="hidden fixed inset-0 bg-black/60 items-center justify-center p-4 z-50" style="display: flex;">
+        <div class="bg-white p-6 rounded-2xl w-full max-w-sm space-y-4 text-black">
+            <h3 class="text-lg font-bold text-slate-800">Deploy Workspace Matrix</h3>
+            <p class="text-[11px] text-slate-400">Agar local security rules ke kaaran API block hoti hai, toh yeh automatic complete dashboard ki offline `.html` file aapke system par download kar dega.</p>
+            <input type="password" id="gh-token" placeholder="GitHub Access Token (PAT)" class="w-full border p-2 text-xs rounded-md focus:outline-none bg-white text-black">
+            <input type="text" id="gh-repo" value="Milan672008/Autometdashbord" placeholder="username/repository-name" class="w-full border p-2 text-xs rounded-md focus:outline-none bg-white text-black">
+            <div class="flex gap-2 text-xs">
+                <button onclick="document.getElementById('github-modal').style.display='none'" class="flex-1 bg-slate-200 py-2 rounded-md">Cancel</button>
+                <button onclick="pushToGithub()" class="flex-1 bg-indigo-600 text-white py-2 rounded-md font-bold">Deploy/Download Now</button>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        let globalDatasetRows = [];
+        let relationshipRegistryArray = [];
+        let activeSelectedFieldElement = null;
+        let runningChartObjectsMap = {};
+
+        let selectedFilterSlicer1_Key = null;
+        let selectedFilterSlicer1_Value = null;
+        let selectedFilterSlicer2_Key = null;
+        let selectedFilterSlicer2_Value = null;
+        let chartCrossFilterKey = null;
+        let chartCrossFilterValue = null;
+
+        document.getElementById('date-display')?.innerText;
+
+        function switchTab(targetTab) {
+            document.getElementById('view-dashboard').classList.add('hidden');
+            document.getElementById('view-dataview').classList.add('hidden');
+            document.getElementById('view-modelview').classList.add('hidden');
+            document.querySelectorAll('.tab-btn').forEach(btn => btn.classList.remove('active'));
+
+            if(targetTab === 'dashboard') document.getElementById('view-dashboard').classList.remove('hidden');
+            if(targetTab === 'dataview') document.getElementById('view-dataview').classList.remove('hidden');
+            if(targetTab === 'modelview') {
+                document.getElementById('view-modelview').classList.remove('hidden');
+                setTimeout(drawRelationshipLines, 50);
+            }
+            document.getElementById('tab-' + targetTab).classList.add('active');
+        }
+
+        document.getElementById('file-input').addEventListener('change', function(e) {
+            const files = e.target.files;
+            if(!files.length) return;
+            
+            Array.from(files).forEach((file, index) => {
+                const reader = new FileReader();
+                reader.onload = function(evt) {
+                    const data = new Uint8Array(evt.target.result);
+                    const workbook = XLSX.read(data, { type: 'array' });
+                    const sheetJSON = XLSX.utils.sheet_to_json(workbook.Sheets[workbook.SheetNames[0]], { defval: 0 });
+                    
+                    if(index === 0) {
+                        globalDatasetRows = sheetJSON;
+                        mapInitialAutomaticSchema(globalDatasetRows[0]);
+                        renderDataGridTable(globalDatasetRows);
+                    }
+                    if(sheetJSON.length > 0) {
+                        createPowerBIModelCard(file.name, Object.keys(sheetJSON[0]), index);
+                    }
+                };
+                reader.readAsArrayBuffer(file);
+            });
+        });
+
+        function mapInitialAutomaticSchema(sampleRow) {
+            const columns = Object.keys(sampleRow);
+            
+            const guessedSales = columns.find(k => /sale|amount|total|price|profit|listprice/i.test(k)) || columns[0];
+            const guessedZone = columns.find(k => /zone|region|state|city/i.test(k)) || columns[1];
+            const guessedCategory = columns.find(k => /cat|segment|item|brand|type/i.test(k)) || columns[2];
+            const guessedMonth = columns.find(k => /month|year|date/i.test(k)) || columns[3];
+
+            selectedFilterSlicer1_Key = guessedZone;
+            selectedFilterSlicer2_Key = guessedCategory;
+
+            document.getElementById('slicer-title-1').innerText = guessedZone.toUpperCase();
+            document.getElementById('slicer-title-2').innerText = guessedCategory.toUpperCase();
+
+            document.querySelectorAll('.live-kpi-node').forEach(kpi => {
+                kpi.setAttribute('data-field', guessedSales);
+            });
+
+            const uniqueZones = [...new Set(globalDatasetRows.map(d => d[guessedZone]))].filter(Boolean);
+            const container1 = document.getElementById('slicer-container-1');
+            container1.innerHTML = uniqueZones.map(z => `<div class="slicer-item" data-value="${z}" onclick="toggleSlicerFilter(1, '${z}')"><span>${z}</span></div>`).join('');
+
+            const uniqueCats = [...new Set(globalDatasetRows.map(d => d[guessedCategory]))].filter(Boolean);
+            const container2 = document.getElementById('slicer-container-2');
+            container2.innerHTML = uniqueCats.map(c => `<div class="slicer-item" data-value="${c}" onclick="toggleSlicerFilter(2, '${c}')"><span>${c}</span></div>`).join('');
+
+            runningChartObjectsMap['ch-bar'] = { type: 'bar', vKey: guessedSales, dKey: guessedCategory, instance: null };
+            runningChartObjectsMap['ch-line'] = { type: 'line', vKey: guessedSales, dKey: guessedMonth, instance: null };
+            runningChartObjectsMap['ch-pie'] = { type: 'pie', vKey: guessedSales, dKey: columns.find(k => /mode|payment|wallet|channel/i.test(k)) || columns[4], instance: null };
+
+            triggerGlobalRecalculation();
+        }
+
+        function toggleSlicerFilter(slicerNum, clickedValue) {
+            if(slicerNum === 1) {
+                selectedFilterSlicer1_Value = (selectedFilterSlicer1_Value === clickedValue) ? null : clickedValue;
+            } else if(slicerNum === 2) {
+                selectedFilterSlicer2_Value = (selectedFilterSlicer2_Value === clickedValue) ? null : clickedValue;
+            }
+            triggerGlobalRecalculation();
+        }
+
+        function triggerGlobalRecalculation() {
+            if(!globalDatasetRows.length) return;
+
+            let computedRecords = globalDatasetRows;
+            let statusTextPartsArray = [];
+
+            if(selectedFilterSlicer1_Key && selectedFilterSlicer1_Value) {
+                computedRecords = computedRecords.filter(r => String(r[selectedFilterSlicer1_Key]) === String(selectedFilterSlicer1_Value));
+                statusTextPartsArray.push(`${selectedFilterSlicer1_Value}`);
+                document.querySelectorAll('#slicer-container-1 .slicer-item').forEach(item => {
+                    item.classList.toggle('active-filter', item.getAttribute('data-value') === selectedFilterSlicer1_Value);
+                });
+            } else {
+                document.querySelectorAll('#slicer-container-1 .slicer-item').forEach(item => item.classList.remove('active-filter'));
+            }
+
+            if(selectedFilterSlicer2_Key && selectedFilterSlicer2_Value) {
+                computedRecords = computedRecords.filter(r => String(r[selectedFilterSlicer2_Key]) === String(selectedFilterSlicer2_Value));
+                statusTextPartsArray.push(`${selectedFilterSlicer2_Value}`);
+                document.querySelectorAll('#slicer-container-2 .slicer-item').forEach(item => {
+                    item.classList.toggle('active-filter', item.getAttribute('data-value') === selectedFilterSlicer2_Value);
+                });
+            } else {
+                document.querySelectorAll('#slicer-container-2 .slicer-item').forEach(item => item.classList.remove('active-filter'));
+            }
+
+            if(chartCrossFilterKey && chartCrossFilterValue) {
+                computedRecords = computedRecords.filter(r => String(r[chartCrossFilterKey]) === String(chartCrossFilterValue));
+                statusTextPartsArray.push(`${chartCrossFilterValue}`);
+            }
+
+            if(statusTextPartsArray.length > 0) {
+                document.getElementById('filter-badge-status').innerText = `🎯 Filtered: ${statusTextPartsArray.join(' | ')}`;
+                document.getElementById('btn-global-clear').classList.remove('hidden');
+            } else {
+                document.getElementById('filter-badge-status').innerText = "Saara Data Loaded (No Active Filters)";
+                document.getElementById('btn-global-clear').classList.add('hidden');
+            }
+
+            document.querySelectorAll('.live-kpi-node').forEach(kpi => {
+                const targetField = kpi.getAttribute('data-field');
+                const aggFunction = kpi.getAttribute('data-agg');
+                let valuesArray = computedRecords.map(r => parseFloat(r[targetField]) || 0);
+                
+                let result = 0;
+                if(valuesArray.length > 0) {
+                    if(aggFunction === 'sum') result = valuesArray.reduce((a, b) => a + b, 0);
+                    if(aggFunction === 'avg') result = (valuesArray.reduce((a, b) => a + b, 0)) / valuesArray.length;
+                    if(aggFunction === 'max') result = Math.max(...valuesArray);
+                    if(aggFunction === 'count') result = valuesArray.length;
+                }
+                kpi.innerText = aggFunction === 'count' ? result.toLocaleString() : `₹${result.toLocaleString('en-IN', { maximumFractionDigits: 1 })}`;
+            });
+
+            Object.keys(runningChartObjectsMap).forEach(id => {
+                const meta = runningChartObjectsMap[id];
+                let groupings = {};
+                
+                let baseChartRecords = globalDatasetRows;
+                if(selectedFilterSlicer1_Key && selectedFilterSlicer1_Value) {
+                    baseChartRecords = baseChartRecords.filter(r => String(r[selectedFilterSlicer1_Key]) === String(selectedFilterSlicer1_Value));
+                }
+                if(selectedFilterSlicer2_Key && selectedFilterSlicer2_Value) {
+                    baseChartRecords = baseChartRecords.filter(r => String(r[selectedFilterSlicer2_Key]) === String(selectedFilterSlicer2_Value));
+                }
+
+                baseChartRecords.forEach(r => {
+                    let v = parseFloat(r[meta.vKey]) || 0;
+                    groupings[r[meta.dKey]] = (groupings[r[meta.dKey]] || 0) + v;
+                });
+
+                const labels = Object.keys(groupings);
+                const values = Object.values(groupings);
+                const canvas = document.getElementById(`canvas-${id}`);
+                
+                if(!canvas) return;
+                if(meta.instance) meta.instance.destroy();
+                
+                let colorsArray = values.map((v, idx) => {
+                    if (chartCrossFilterKey === meta.dKey && labels[idx] !== chartCrossFilterValue) {
+                        return 'rgba(148, 163, 184, 0.2)';
+                    }
+                    return id === 'ch-line' ? '#4f46e5' : ['#4f46e5', '#34d399', '#fbbf24', '#ef4444', '#a855f7'][idx % 5];
+                });
+
+                meta.instance = new Chart(canvas.getContext('2d'), {
+                    type: meta.type,
+                    data: {
+                        labels,
+                        datasets: [{
+                            label: meta.vKey,
+                            data: values,
+                            backgroundColor: meta.type === 'line' ? 'rgba(79, 70, 229, 0.05)' : colorsArray,
+                            borderColor: '#4f46e5',
+                            fill: meta.type === 'line',
+                            borderWidth: 2
+                        }]
+                    },
+                    options: { 
+                        responsive: true, 
+                        maintainAspectRatio: false,
+                        onClick: (event, activeElements) => {
+                            if (activeElements.length > 0) {
+                                const elementIdx = activeElements[0].index;
+                                const selectedLabel = meta.instance.data.labels[elementIdx];
+                                
+                                if (chartCrossFilterKey === meta.dKey && chartCrossFilterValue === selectedLabel) {
+                                    chartCrossFilterKey = null;
+                                    chartCrossFilterValue = null;
+                                } else {
+                                    chartCrossFilterKey = meta.dKey;
+                                    chartCrossFilterValue = selectedLabel;
+                                }
+                                triggerGlobalRecalculation();
+                            }
+                        }
+                    }
+                });
+            });
+        }
+
+        function clearSpecificFilter(slicerRef) {
+            if(slicerRef === 'slicer1') selectedFilterSlicer1_Value = null;
+            if(slicerRef === 'slicer2') selectedFilterSlicer2_Value = null;
+            triggerGlobalRecalculation();
+        }
+
+        function clearAllFilters() {
+            selectedFilterSlicer1_Value = null;
+            selectedFilterSlicer2_Value = null;
+            chartCrossFilterKey = null;
+            chartCrossFilterValue = null;
+            triggerGlobalRecalculation();
+        }
+
+        // --- INLINE EDIT ARCHITECTURE ---
+        function editKpiInline(contentCardElement, currentAgg) {
+            if(!globalDatasetRows.length) return;
+            const h2Node = contentCardElement.querySelector('.live-kpi-node');
+            const currentField = h2Node.getAttribute('data-field');
+            const columns = Object.keys(globalDatasetRows[0]);
+            
+            let fieldOptions = columns.map(c => `<option value="${c}" ${c===currentField?'selected':''}>${c}</option>`).join('');
+            let aggOptions = ['sum', 'avg', 'max', 'count'].map(a => `<option value="${a}" ${a===currentAgg?'selected':''}>${a.toUpperCase()}</option>`).join('');
+
+            contentCardElement.innerHTML = `
+                <div class="text-left space-y-1 p-1 bg-slate-50 rounded-xl w-full text-black">
+                    <select class="w-full border border-slate-200 rounded p-1 text-[11px] bg-white inline-edit-field">${fieldOptions}</select>
+                    <select class="w-full border border-slate-200 rounded p-1 text-[11px] bg-white inline-edit-agg">${aggOptions}</select>
+                    <button onclick="saveKpiInline(this)" class="w-full bg-indigo-600 text-white font-bold text-[10px] py-1 rounded-md mt-1 shadow-xs">Apply</button>
+                </div>`;
+        }
+
+        function saveKpiInline(buttonEl) {
+            const wrapper = buttonEl.parentElement;
+            const parentCard = wrapper.parentElement;
+            const newField = wrapper.querySelector('.inline-edit-field').value;
+            const newAgg = wrapper.querySelector('.inline-edit-agg').value;
+            const uniqueId = 'kpi-' + Date.now();
+
+            parentCard.innerHTML = `
+                <p class="text-[10px] uppercase font-bold text-slate-400 tracking-wider">Custom Metric Card</p>
+                <h2 class="text-xl font-black text-indigo-600 live-kpi-node mt-1" id="${uniqueId}" data-field="${newField}" data-agg="${newAgg}">0</h2>
+                <span class="text-[9px] text-slate-300 mt-1 block">Double-Click to Edit</span>`;
+            
+            parentCard.setAttribute('ondblclick', `editKpiInline(this, '${newAgg}')`);
+            triggerGlobalRecalculation();
+        }
+
+        function editChartInline(chartId) {
+            const meta = runningChartObjectsMap[chartId];
+            const columns = Object.keys(globalDatasetRows[0]);
+            const cardBlock = document.getElementById(`block-${chartId}`);
+
+            let fieldOpts = columns.map(c => `<option value="${c}" ${c===meta.vKey?'selected':''}>${c}</option>`).join('');
+            let dimOpts = columns.map(c => `<option value="${c}" ${c===meta.dKey?'selected':''}>${c}</option>`).join('');
+            let typeOpts = ['bar', 'line', 'pie', 'doughnut'].map(t => `<option value="${t}" ${t===meta.type?'selected':''}>${t.toUpperCase()}</option>`).join('');
+
+            cardBlock.innerHTML = `
+                <div class="text-left space-y-2 text-xs p-2 bg-slate-50 rounded-xl h-full flex flex-col justify-between w-full text-black">
+                    <div><label class="text-[10px] font-bold text-slate-400 block mb-0.5">Style</label><select class="w-full border border-slate-200 p-1 rounded bg-white text-xs ie-type">${typeOpts}</select></div>
+                    <div><label class="text-[10px] font-bold text-slate-400 block mb-0.5">Value</label><select class="w-full border border-slate-200 p-1 rounded bg-white text-xs ie-val">${fieldOpts}</select></div>
+                    <div><label class="text-[10px] font-bold text-slate-400 block mb-0.5">Label</label><select class="w-full border border-slate-200 p-1 rounded bg-white text-xs ie-dim">${dimOpts}</select></div>
+                    <button onclick="saveChartInline('${chartId}')" class="w-full bg-emerald-600 hover:bg-emerald-700 font-bold text-white text-[11px] py-1.5 rounded-xl transition mt-2 shadow-xs">Save Changes</button>
+                </div>`;
+        }
+
+        function saveChartInline(chartId) {
+            const cardBlock = document.getElementById('block-' + chartId);
+            const newType = cardBlock.querySelector('.ie-type').value;
+            const newVal = cardBlock.querySelector('.ie-val').value;
+            const newDim = cardBlock.querySelector('.ie-dim').value;
+
+            cardBlock.innerHTML = `
+                <p class="text-xs uppercase font-bold text-slate-400 tracking-wider mb-2">Custom Dynamic Viewport Chart</p>
+                <div class="w-full h-[85%] relative"><canvas id="canvas-${chartId}"></canvas></div>`;
+            
+            cardBlock.setAttribute('ondblclick', `editChartInline('${chartId}')`);
+            
+            runningChartObjectsMap[chartId] = { type: newType, vKey: newVal, dKey: newDim, instance: null };
+            triggerGlobalRecalculation();
+        }
+
+        // --- MODEL DIAGRAMS ---
+        function createPowerBIModelCard(filename, columnsArray, idx) {
+            const canvasWorkspace = document.getElementById('model-canvas');
+            const cardId = 'model-card-' + idx;
+            
+            const card = document.createElement('div');
+            card.className = 'model-table-card';
+            card.id = cardId;
+            card.style.left = (40 + (idx * 230)) + 'px';
+            card.style.top = '60px';
+
+            let innerHTML = `<div class="model-table-header">${filename}</div>`;
+            columnsArray.forEach((col, cIdx) => {
+                const fieldId = `field-${idx}-${cIdx}`;
+                innerHTML += `<div class="model-column-item" id="${fieldId}" onclick="handleFieldClick('${fieldId}', '${cardId}')"><span>🔑 ${col}</span> <span class="text-[9px] opacity-40">1:*</span></div>`;
+            });
+            card.innerHTML = innerHTML;
+
+            let isDragging = false;
+            let offsetBaseX, offsetBaseY;
+
+            card.querySelector('.model-table-header').addEventListener('mousedown', (e) => {
+                isDragging = true;
+                offsetBaseX = e.clientX - card.getBoundingClientRect().left;
+                offsetBaseY = e.clientY - card.getBoundingClientRect().top;
+            });
+
+            document.addEventListener('mousemove', (e) => {
+                if(!isDragging) return;
+                card.style.left = (e.clientX - canvasWorkspace.getBoundingClientRect().left - offsetBaseX) + 'px';
+                card.style.top = (e.clientY - canvasWorkspace.getBoundingClientRect().top - offsetBaseY) + 'px';
+                drawRelationshipLines();
+            });
+
+            document.addEventListener('mouseup', () => { isDragging = false; });
+            canvasWorkspace.appendChild(card);
+        }
+
+        function handleFieldClick(fieldId, cardId) {
+            const targetElement = document.getElementById(fieldId);
+            if (!activeSelectedFieldElement) {
+                activeSelectedFieldElement = { fieldId, cardId };
+                targetElement.classList.add('selected-field');
+            } else {
+                if (activeSelectedFieldElement.cardId === cardId) {
+                    document.getElementById(activeSelectedFieldElement.fieldId).classList.remove('selected-field');
+                    activeSelectedFieldElement = null;
+                    return;
+                }
+                relationshipRegistryArray.push({ from: activeSelectedFieldElement.fieldId, to: fieldId });
+                document.getElementById(activeSelectedFieldElement.fieldId).classList.remove('selected-field');
+                activeSelectedFieldElement = null;
+                drawRelationshipLines();
+            }
+        }
+
+        function drawRelationshipLines() {
+            const canvas = document.getElementById('relation-canvas');
+            const container = document.getElementById('view-modelview');
+            if (container.classList.contains('hidden')) return;
+
+            const ctx = canvas.getContext('2d');
+            canvas.width = container.clientWidth;
+            canvas.height = container.clientHeight;
+            ctx.clearRect(0, 0, canvas.width, canvas.height);
+
+            relationshipRegistryArray.forEach(rel => {
+                const elFrom = document.getElementById(rel.from);
+                const elTo = document.getElementById(rel.to);
+                if (!elFrom || !elTo) return;
+
+                const rectContainer = container.getBoundingClientRect();
+                const rectFrom = elFrom.getBoundingClientRect();
+                const rectTo = elTo.getBoundingClientRect();
+
+                const x1 = (rectFrom.left - rectContainer.left) + (rectFrom.width / 2);
+                const y1 = (rectFrom.top - rectContainer.top) + (rectFrom.height / 2);
+                const x2 = (rectTo.left - rectContainer.left) + (rectTo.width / 2);
+                const y2 = (rectTo.top - rectContainer.top) + (rectTo.height / 2);
+
+                ctx.beginPath();
+                ctx.moveTo(x1, y1);
+                ctx.lineTo(x2, y2);
+                ctx.strokeStyle = '#4f46e5';
+                ctx.lineWidth = 2.5;
+                ctx.setLineDash([4, 4]);
+                ctx.stroke();
+            });
+        }
+
+        function renderDataGridTable(dataset) {
+            const headerRow = document.getElementById('table-head');
+            const bodyRow = document.getElementById('table-body');
+            headerRow.innerHTML = ''; bodyRow.innerHTML = '';
+            if(!dataset.length) return;
+            
+            let headers = Object.keys(dataset[0]);
+            let thr = "<tr>";
+            headers.forEach(h => thr += `<th class="p-3 border-b border-slate-200">${h}</th>`);
+            headerRow.innerHTML = thr + "</tr>";
+
+            dataset.slice(0, 50).forEach(row => {
+                let tbr = "<tr>";
+                headers.forEach(h => tbr += `<td class="p-3 border-b border-slate-100">${row[h]}</td>`);
+                bodyRow.innerHTML += tbr + "</tr>";
+            });
+        }
+
+        function saveAsPPT() {
+            let firstChartKey = Object.keys(runningChartObjectsMap)[0];
+            if(!firstChartKey || !runningChartObjectsMap[firstChartKey].instance) { alert("Pehle data file import/upload karein!"); return; }
+            
+            let ppt = new PptxGenJS();
+            let s1 = ppt.addSlide();
+            s1.background = { color: "F1F5F9" };
+            s1.addText("AUTOMATED REVENUE MEETING PRESENTATION", { x: 0.5, y: 2.5, w: 9, fontSize: 26, bold: true, color: "1E293B", align: "center" });
+            
+            Object.keys(runningChartObjectsMap).forEach(id => {
+                let chartMeta = runningChartObjectsMap[id];
+                if(chartMeta.instance) {
+                    let s = ppt.addSlide();
+                    s.addText(`VISUAL MATRIX DECK: ${chartMeta.vKey.toUpperCase()}`, { x: 0.5, y: 0.4, fontSize: 18, bold: true, color: "4F46E5" });
+                    s.addImage({ data: chartMeta.instance.toBase64Image(), x: 0.5, y: 1.2, w: 9.0, h: 4.2 });
+                }
+            });
+            
+            ppt.writeFile({ fileName: "Automated_BI_Presentation.pptx" });
+        }
+
+        // --- PRODUCTION ROBUST GITHUB PUSH PIPELINE WITH AUTOMATIC OFFLINE BACKDOWN ---
+        async function pushToGithub() {
+            const token = document.getElementById('gh-token').value.trim();
+            const repo = document.getElementById('gh-repo').value.trim();
+            
+            if(!token || !repo) {
+                alert("GitHub Token aur Repository Path field empty nahi ho sakte.");
+                return;
+            }
+
+            const currentHtmlContent = "<!DOCTYPE html>\n" + document.documentElement.outerHTML;
+
+            // Trigger fallback file downloader mechanism instantly to guarantee safe code saving
+            const blob = new Blob([currentHtmlContent], { type: "text/html" });
+            const link = document.createElement("a");
+            link.href = URL.createObjectURL(blob);
+            link.download = "index.html";
+            document.body.appendChild(link);
+            link.click();
+            document.body.removeChild(link);
+
+            const htmlContentString = btoa(unescape(encodeURIComponent(currentHtmlContent)));
+            const targetUrl = `https://api.github.com/repos/${repo}/contents/index.html`;
+
+            try {
+                let shaHash = "";
+                let lookupResponse = await fetch(targetUrl, {
+                    headers: { "Authorization": `token ${token}` }
+                });
+
+                if (lookupResponse.ok) {
+                    shaHash = (await lookupResponse.json()).sha;
+                }
+
+                let payload = { message: "Studio BI Auto-Grids Production Build Update", content: htmlContentString };
+                if(shaHash) payload.sha = shaHash;
+
+                let execResponse = await fetch(targetUrl, {
+                    method: "PUT",
+                    headers: { "Authorization": `token ${token}`, "Content-Type": "application/json" },
+                    body: JSON.stringify(payload)
+                });
+
+                if(execResponse.ok) {
+                    alert("🎉 Deployment Success! Dashboard GitHub repo par perfectly push ho gaya hai.");
+                    document.getElementById('github-modal').style.display = 'none';
+                } else {
+                    alert("⚠️ Browser CORS Security Rule is blocking direct API push. Fret not! Updated 'index.html' file aapke device par download ho chuki hai. Aap use direct GitHub repository par upload (Drag & Drop) karke sync kar sakte hain.");
+                }
+            } catch(ex) { 
+                alert("⚠️ Local Browser Network Isolated Mode. Updated 'index.html' workspace file successfully aapke device par download ho chuki hai!"); 
+            }
+        }
+    </script>
+
+</body></html>
